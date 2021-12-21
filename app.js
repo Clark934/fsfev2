@@ -19,6 +19,10 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/ui/html/index.html"));
 });
 
+app.get("/photo", (req, res) => {
+  res.sendFile(path.join(__dirname + "/ui/html/photo.html"));
+});
+
 const getNewQuote = () => {
   const responses = ["Wolf!", "Bark!", "All I like is people"];
   // Generates a random number between 0 and the length of the quotes array

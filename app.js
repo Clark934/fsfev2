@@ -12,7 +12,7 @@ app.use("/js", express.static(path.join(__dirname, "ui/js/")));
 // Serve css files
 app.use("/css", express.static(path.join(__dirname, "ui/css/")));
 // Serve images files
-app.use(express.static("ui"));
+app.use(express.static(path.join(__dirname, "ui")));
 app.use("/images", express.static("images"));
 
 app.get("/", (req, res) => {

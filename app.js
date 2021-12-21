@@ -16,8 +16,16 @@ app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/ui/html/index.html"));
 });
 
+const getNewQuote = () => {
+  const responses = ["Wolf!", "Bark!", "All I like is people"];
+  // Generates a random number between 0 and the length of the quotes array
+  const indx = Math.floor(Math.random() * responses.length);
+
+  const response = responses[indx];
+  return response;
+};
 function handleQuery(query, cb) {
-  cb("Awesome");
+  cb(getNewQuote());
 }
 
 /**

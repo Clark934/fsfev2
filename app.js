@@ -11,6 +11,9 @@ const port = 3000;
 app.use("/js", express.static(path.join(__dirname, "ui/js/")));
 // Serve css files
 app.use("/css", express.static(path.join(__dirname, "ui/css/")));
+// Serve images files
+app.use(express.static("ui"));
+app.use("/images", express.static("images"));
 
 app.get("/", (req, res) => {
   res.sendFile(path.join(__dirname + "/ui/html/index.html"));
